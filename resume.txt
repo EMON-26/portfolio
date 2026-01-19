@@ -1,0 +1,64 @@
+MD SAKIB HASAN EMON
+Dhaka, Bangladesh • +8801614633411 • mdsakibhasanemon@gmail.com
+LinkedIn: www.linkedin.com/in/mdsakibhasan26 • GitHub: github.com/EMON-26
+
+SUMMARY
+CSE undergraduate with developing expertise in Machine Learning, AI, Front-End Development, Web
+Technologies, and Database Systems. Currently working on ML-based academic projects involving model
+training, data preprocessing, and evaluation. Skilled in creating responsive user interfaces, integrating APIs, and
+building data-driven applications. Strong understanding of programming fundamentals and a growing interest
+in practical AI implementation and modern web development.
+
+EDUCATION
+Green University of Bangladesh
+B.Sc. in Computer Science & Engineering • CGPA: 3.40 / 4.00 | 2022 – Present
+
+Mymensingh Govt. College
+HSC (Science) • GPA: 5.00 / 5.00 | 2018 – 2020
+
+SKILLS
+Programming: Python (ML data libraries), C, Java, HTML, CSS, JavaScript
+Tech Areas: Machine Learning, Data Processing, Model Deployment, Front-End Development
+Tools: Git, LaTeX, Streamlit, MS Office
+Soft Skills: Communication, Collaboration, Adaptability
+Languages: Bangla (Native), English (Fluent)
+
+EXPERIENCE
+Teaching Support Experience | 2023 – 2024
+• Assisted learners with basic ICT and academic tasks
+• Explained concepts clearly and provided general study support
+
+Technical Assistance (Informal) | 2021 – 2022
+• Helped peers with programming basics and simple technical problems
+
+PROJECTS
+• SmartOffice Project (Networking/IoT): Designed and simulated an IoT-enabled smart office
+environment featuring automated lighting, climate control, smoke detection, energy optimization via
+solar power, and RFID-based access control. Demonstrated device interconnectivity and automation
+workflows.
+
+• Shopping Management System (Assembly Language): Developed a low-level product management
+system using Assembly, supporting item insertion, updating, deletion, billing, and inventory tracking
+through register-level operations.
+
+• Inventory Management System (Shell Script): Built a menu-driven shell application enabling
+adding, updating, sorting, searching, and generating low-stock reports using bash utilities such as
+grep, sed, and awk. Ensured data integrity using text-based record structures.
+
+• Banglish Mental Health Classification (Deep Learning): Implemented a hybrid deep learning
+model for emotion and mental-health severity classification from code-mixed Bangla-English (Banglish)
+social media text. Includes NLP preprocessing, transformer-based modeling, and multi-task learning.
+
+• EmployManagement System (Java): Designed a Java-based employee management application
+with GUI forms for adding, searching, updating, and removing employee records using Swing and
+file/database handling.
+
+• PrerequisiteCheck (Java): Created a compact Java program for validating prerequisite course
+requirements using conditional logic and structured rule checking.
+
+RESEARCH
+• Mental Health Classification from Social Media Data using Deep Learning (Ongoing): Conducting
+research on Banglish (code-mixed) social media text to develop a hybrid deep learning framework
+incorporating transformer-based architectures and multi-task learning for emotion detection and
+mental health severity prediction. The work emphasizes robust preprocessing, contextual feature
+extraction, and model evaluation across diverse linguistic patterns.
