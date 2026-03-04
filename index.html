@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Md Sakib Hasan Emon Portfolio" />
     <title>Md Sakib Hasan Emon | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
     <style>
         :root {
             --bg: #0b0b0b;
@@ -27,10 +30,11 @@
         }
 
         body {
-            font-family: "Segoe UI", Arial, sans-serif;
+            font-family: "Inter", "Segoe UI", Arial, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            letter-spacing: 0.1px;
         }
 
         a {
@@ -48,20 +52,21 @@
             position: fixed;
             left: 0;
             top: 0;
-            width: 300px;
+            width: 320px;
             height: 100vh;
             background: #050505;
             border-right: 1px solid var(--line);
-            padding: 2.4rem 1.8rem;
+            padding: 2.6rem 1.9rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .brand {
-            font-size: 1.35rem;
+            font-family: "Poppins", sans-serif;
+            font-size: 1.45rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         .tagline {
@@ -72,7 +77,7 @@
 
         .menu {
             list-style: none;
-            margin-top: 2rem;
+            margin-top: 2.2rem;
             display: grid;
             gap: 0.65rem;
         }
@@ -80,15 +85,39 @@
         .menu a {
             display: block;
             border: 1px solid transparent;
-            padding: 0.6rem 0.7rem;
+            padding: 0.66rem 0.8rem;
             color: #d9d9d9;
-            font-size: 0.93rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1.1px;
-            transition: 0.2s ease;
+            letter-spacing: 1.5px;
+            transition: 0.25s ease;
+            position: relative;
+        }
+
+        .menu a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 60%;
+            background: #f2f2f2;
+            transition: width 0.25s ease;
         }
 
         .menu a:hover {
+            border-color: var(--line);
+            background: var(--bg-soft);
+            color: var(--white);
+        }
+
+        .menu a:hover::before,
+        .menu a.active::before {
+            width: 2px;
+        }
+
+        .menu a.active {
             border-color: var(--line);
             background: var(--bg-soft);
             color: var(--white);
@@ -102,7 +131,7 @@
         }
 
         .main {
-            margin-left: 300px;
+            margin-left: 320px;
         }
 
         .hero {
@@ -127,16 +156,18 @@
         }
 
         h1 {
+            font-family: "Poppins", sans-serif;
             font-size: clamp(2.2rem, 5.7vw, 4.5rem);
             line-height: 1.1;
             max-width: 900px;
+            letter-spacing: 0.2px;
         }
 
         .hero p {
             color: #c2c2c2;
             margin-top: 1.25rem;
             max-width: 760px;
-            font-size: 1.04rem;
+            font-size: 1.02rem;
         }
 
         .hero-actions {
@@ -148,14 +179,15 @@
 
         .btn {
             display: inline-block;
-            padding: 0.65rem 1rem;
+            padding: 0.72rem 1.1rem;
             border: 1px solid #f3f3f3;
             background: #f3f3f3;
             color: #070707;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 1.3px;
+            transition: 0.25s ease;
         }
 
         .btn.alt {
@@ -163,9 +195,14 @@
             color: #f3f3f3;
         }
 
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
         section {
-            padding: 4.2rem 0;
+            padding: 5rem 0;
             border-bottom: 1px solid var(--line);
+            scroll-margin-top: 20px;
         }
 
         .container {
@@ -174,8 +211,10 @@
         }
 
         h2 {
-            font-size: 1.8rem;
+            font-family: "Poppins", sans-serif;
+            font-size: 2rem;
             margin-bottom: 1.6rem;
+            letter-spacing: 0.2px;
         }
 
         .section-head {
@@ -202,7 +241,13 @@
         .card {
             border: 1px solid var(--line);
             background: var(--bg-card);
-            padding: 1rem;
+            padding: 1.2rem;
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .card:hover {
+            border-color: #434343;
+            transform: translateY(-2px);
         }
 
         .card p,
@@ -235,14 +280,26 @@
         .project {
             border: 1px solid var(--line);
             background: linear-gradient(150deg, #1a1a1a, #101010);
-            padding: 1.1rem;
+            padding: 1.2rem;
             cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+            min-height: 190px;
+            position: relative;
         }
 
         .project:hover {
             transform: translateY(-3px);
             border-color: #5a5a5a;
+            background: linear-gradient(150deg, #202020, #121212);
+        }
+
+        .project::after {
+            content: "↗";
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            color: #858585;
+            font-size: 0.95rem;
         }
 
         .project h3 {
@@ -267,14 +324,18 @@
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, 0.88);
-            display: none;
+            display: block;
             z-index: 999;
             padding: 2rem 1rem;
             overflow-y: auto;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
         }
 
         .overlay.active {
-            display: block;
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .overlay-card {
@@ -282,7 +343,13 @@
             margin: 3rem auto;
             border: 1px solid #444;
             background: #111;
-            padding: 1.35rem;
+            padding: 1.5rem;
+            transform: translateY(16px);
+            transition: transform 0.25s ease;
+        }
+
+        .overlay.active .overlay-card {
+            transform: translateY(0);
         }
 
         .overlay-top {
@@ -303,6 +370,11 @@
             color: #f2f2f2;
             padding: 0.35rem 0.6rem;
             cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .close-btn:hover {
+            border-color: #f2f2f2;
         }
 
         .overlay p {
@@ -337,6 +409,10 @@
 
             .main {
                 margin-left: 0;
+            }
+
+            section {
+                scroll-margin-top: 110px;
             }
         }
 
@@ -597,6 +673,14 @@
         const overlayTitle = document.getElementById('overlayTitle');
         const overlayBody = document.getElementById('overlayBody');
         const closeOverlay = document.getElementById('closeOverlay');
+        const menuLinks = document.querySelectorAll('.menu a');
+        const sections = document.querySelectorAll('main section[id]');
+
+        const closeProjectOverlay = () => {
+            overlay.classList.remove('active');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
 
         projects.forEach((project) => {
             project.addEventListener('click', () => {
@@ -608,19 +692,32 @@
             });
         });
 
-        closeOverlay.addEventListener('click', () => {
-            overlay.classList.remove('active');
-            overlay.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-        });
+        closeOverlay.addEventListener('click', closeProjectOverlay);
 
         overlay.addEventListener('click', (event) => {
             if (event.target === overlay) {
-                overlay.classList.remove('active');
-                overlay.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
+                closeProjectOverlay();
             }
         });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && overlay.classList.contains('active')) {
+                closeProjectOverlay();
+            }
+        });
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    menuLinks.forEach((link) => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, { threshold: 0.45 });
+
+        sections.forEach((section) => sectionObserver.observe(section));
     </script>
 </body>
 </html>
