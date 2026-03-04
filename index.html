@@ -145,6 +145,57 @@
         .hero-inner {
             width: min(980px, 90%);
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .hero-copy {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid #303030;
+            padding: 1.5rem;
+        }
+
+        .hero-visual {
+            border: 1px solid #343434;
+            background: rgba(12, 12, 12, 0.78);
+            padding: 0.9rem;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border: 1px solid #2f2f2f;
+            display: block;
+        }
+
+        .hero-stats {
+            margin-top: 0.8rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+
+        .hero-stat {
+            border: 1px solid #2d2d2d;
+            background: #101010;
+            padding: 0.55rem;
+            text-align: center;
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+
+        .hero-stat span {
+            color: #9f9f9f;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
 
         .eyebrow {
@@ -238,6 +289,41 @@
             gap: 1rem;
         }
 
+        .about-layout {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 1rem;
+        }
+
+        .about-media {
+            border: 1px solid var(--line);
+            background: var(--bg-card);
+            padding: 0.9rem;
+            position: relative;
+            min-height: 320px;
+        }
+
+        .about-media img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+            border: 1px solid #2f2f2f;
+            display: block;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 1.25rem;
+            left: 1.25rem;
+            background: rgba(0, 0, 0, 0.78);
+            border: 1px solid #3a3a3a;
+            padding: 0.55rem 0.75rem;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .card {
             border: 1px solid var(--line);
             background: var(--bg-card);
@@ -269,6 +355,22 @@
         .list li:last-child {
             border-bottom: 0;
             padding-bottom: 0;
+        }
+
+        .skill-tags {
+            margin-top: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tags span {
+            border: 1px solid #343434;
+            background: #121212;
+            color: #d9d9d9;
+            font-size: 0.76rem;
+            letter-spacing: 0.4px;
+            padding: 0.32rem 0.52rem;
         }
 
         .portfolio-grid {
@@ -305,6 +407,31 @@
         .project h3 {
             font-size: 1.05rem;
             margin-bottom: 0.45rem;
+        }
+
+        .project-thumb {
+            height: 120px;
+            border: 1px solid #2b2b2b;
+            margin-bottom: 0.85rem;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%);
+            position: relative;
+        }
+
+        .project-thumb::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.52));
+        }
+
+        .project:nth-child(odd) .project-thumb {
+            background-image: url("full photo.jpg");
+        }
+
+        .project:nth-child(even) .project-thumb {
+            background-image: url("half photo.jpg");
         }
 
         .project p {
@@ -411,6 +538,15 @@
                 margin-left: 0;
             }
 
+            .hero-inner,
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-photo {
+                height: 300px;
+            }
+
             section {
                 scroll-margin-top: 110px;
             }
@@ -418,9 +554,14 @@
 
         @media (max-width: 780px) {
             .grid-2,
+            .about-layout,
             .portfolio-grid,
             .menu {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-stat strong {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -452,16 +593,26 @@
         <main class="main">
             <section class="hero" id="home">
                 <div class="hero-inner">
-                    <p class="eyebrow">Portfolio 2026</p>
-                    <h1>Building Practical ML and NLP Solutions With Clear Engineering Workflows</h1>
-                    <p>
-                        Computer Science and Engineering undergraduate with strong academic focus on Machine Learning,
-                        Data Mining, Deep Learning, and NLP. Experienced in data collection, preprocessing, feature engineering,
-                        model training, and evaluation using Python-based ML frameworks.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn">Explore Work</a>
-                        <a href="#contact" class="btn alt">Contact</a>
+                    <div class="hero-copy">
+                        <p class="eyebrow">Portfolio 2026</p>
+                        <h1>Building Practical ML and NLP Solutions With Clear Engineering Workflows</h1>
+                        <p>
+                            Computer Science and Engineering undergraduate with strong academic focus on Machine Learning,
+                            Data Mining, Deep Learning, and NLP. Experienced in data collection, preprocessing, feature engineering,
+                            model training, and evaluation using Python-based ML frameworks.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn">Explore Work</a>
+                            <a href="#contact" class="btn alt">Contact</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <img class="hero-photo" src="half photo.jpg" alt="Md Sakib Hasan Emon" />
+                        <div class="hero-stats">
+                            <div class="hero-stat"><strong>5+</strong><span>Projects</span></div>
+                            <div class="hero-stat"><strong>2025</strong><span>QA IDP</span></div>
+                            <div class="hero-stat"><strong>3.43</strong><span>CGPA</span></div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -472,7 +623,11 @@
                         <h2>About</h2>
                         <span>Profile</span>
                     </div>
-                    <div class="grid-2">
+                    <div class="about-layout">
+                        <div class="about-media">
+                            <img src="full photo.jpg" alt="Profile" />
+                            <div class="about-badge">ML • NLP • QA</div>
+                        </div>
                         <div class="card">
                             <p>
                                 Actively involved in research on mental health prediction from social media data and seeking
@@ -505,6 +660,9 @@
                                 <li><strong>Machine Learning:</strong> Supervised Learning, Classification, Regression, Clustering</li>
                                 <li><strong>Data Mining:</strong> Data Cleaning, Preprocessing, Pattern Discovery, EDA</li>
                             </ul>
+                            <div class="skill-tags">
+                                <span>Python</span><span>C</span><span>Java</span><span>Classification</span><span>Regression</span><span>EDA</span>
+                            </div>
                         </div>
                         <div class="card">
                             <ul class="list">
@@ -512,6 +670,9 @@
                                 <li><strong>Software QA:</strong> Manual Testing, Functional Testing, Test Case Design, Bug Reporting</li>
                                 <li><strong>Tools:</strong> NumPy, Pandas, Scikit-learn, TensorFlow (basic), PyTorch (basic), Git, Bash, LaTeX, Streamlit</li>
                             </ul>
+                            <div class="skill-tags">
+                                <span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>NLP</span><span>Testing</span><span>Git</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -525,30 +686,35 @@
                     </div>
                     <div class="portfolio-grid">
                         <article class="project" data-title="UNITY AID - Community Driven Emergency Helping Platform (IDP)" data-body="Designed and developed a web-based emergency response platform connecting people in need with volunteers and organizations. Implemented role-based access control, verified case management, real-time request tracking, and location-based coordination. QA contribution included manual test case execution, form validation checks, and structured bug reporting.">
+                            <div class="project-thumb" aria-hidden="true"></div>
                             <h3>UNITY AID (IDP)</h3>
                             <p>Emergency response platform with role-based workflow and QA validation.</p>
                             <div class="meta">Web Platform / QA / IDP</div>
                         </article>
 
                         <article class="project" data-title="Banglish Mental Health Classification (ML & Deep Learning)" data-body="Developed an NLP-based machine learning system for emotion and mental health severity classification from Bangla-English code-mixed social media data, including preprocessing and model evaluation stages.">
+                            <div class="project-thumb" aria-hidden="true"></div>
                             <h3>Banglish Mental Health Classification</h3>
                             <p>NLP pipeline for code-mixed emotion and severity classification.</p>
                             <div class="meta">ML / NLP / Research</div>
                         </article>
 
                         <article class="project" data-title="ARFF Dataset Analysis & Decision Tree Exploration" data-body="Implemented data preprocessing, feature analysis, and decision tree modeling on ARFF datasets for data mining experimentation and structured learning analysis.">
+                            <div class="project-thumb" aria-hidden="true"></div>
                             <h3>ARFF Dataset Analysis</h3>
                             <p>Data mining workflow with feature analysis and decision tree modeling.</p>
                             <div class="meta">Data Mining</div>
                         </article>
 
                         <article class="project" data-title="Employee Management System (Java)" data-body="Built a structured CRUD-based desktop application using Java Swing for handling employee records with a clean workflow.">
+                            <div class="project-thumb" aria-hidden="true"></div>
                             <h3>Employee Management System</h3>
                             <p>Java Swing desktop CRUD application for employee record operations.</p>
                             <div class="meta">Java / Desktop</div>
                         </article>
 
                         <article class="project" data-title="Inventory Management System (Shell Script)" data-body="Developed a menu-driven shell script system supporting structured record handling, updates, and reporting features.">
+                            <div class="project-thumb" aria-hidden="true"></div>
                             <h3>Inventory Management System</h3>
                             <p>Menu-driven shell-based inventory records and reporting utility.</p>
                             <div class="meta">Shell Script</div>
