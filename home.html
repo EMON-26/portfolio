@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Home - Md Sakib Hasan Emon" />
+    <title>Home | Md Sakib Hasan Emon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #0b1020;
+            --text: #f5f5f5;
+            --muted: #c7d0f6;
+            --line: rgba(129, 152, 247, 0.3);
+            --accent-1: #6f7dff;
+            --accent-2: #a855f7;
+            --accent-3: #22d3ee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Inter", Arial, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 15% 15%, rgba(111, 125, 255, 0.24), transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.23), transparent 35%),
+                var(--bg);
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+        }
+
+        .home-card {
+            width: min(900px, 95%);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: rgba(18, 24, 44, 0.86);
+            overflow: hidden;
+        }
+
+        .cover {
+            height: 220px;
+            background:
+                linear-gradient(rgba(8, 12, 28, 0.3), rgba(8, 12, 28, 0.5)),
+                url("full photo.jpg") center/cover no-repeat;
+        }
+
+        .content {
+            padding: 1.5rem;
+        }
+
+        h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(1.7rem, 4vw, 2.8rem);
+            line-height: 1.15;
+            margin-bottom: 0.7rem;
+            background: linear-gradient(135deg, #9fb1ff, #d0b2ff, #79e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: var(--muted);
+            max-width: 720px;
+            margin-bottom: 1.2rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: 1px solid transparent;
+            border-radius: 12px;
+            padding: 0.68rem 1rem;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+        }
+
+        .btn.alt {
+            border-color: var(--line);
+            background: rgba(20, 30, 56, 0.55);
+            color: #eaf0ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-card">
+        <div class="cover" aria-hidden="true"></div>
+        <div class="content">
+            <h1>Md Sakib Hasan Emon</h1>
+            <p>
+                Welcome to my portfolio. I work on Machine Learning, NLP, Data Mining,
+                and software quality-focused projects.
+            </p>
+            <div class="actions">
+                <a class="btn" href="index.html">Enter Portfolio</a>
+                <a class="btn alt" href="index.html#projects">View Projects</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
