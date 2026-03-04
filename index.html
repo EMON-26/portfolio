@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Md Sakib Hasan Emon - CSE Undergraduate | ML & AI Enthusiast" />
-    <title>Md Sakib Hasan Emon - Portfolio</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <meta name="description" content="Portfolio of Md Sakib Hasan Emon - CSE Undergraduate" />
+    <title>Md Sakib Hasan Emon | Portfolio</title>
     <style>
+        :root {
+            --bg: #ffffff;
+            --bg-soft: #f5f5f5;
+            --text: #111111;
+            --muted: #555555;
+            --line: #d9d9d9;
+            --card: #ffffff;
+            --accent: #1f1f1f;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --primary-blue: #5b6ef5;
-            --bg-dark: #0f1729;
-            --bg-darker: #0a0e1a;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --text-primary: #ffffff;
-            --text-secondary: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --hover-bg: rgba(91, 110, 245, 0.1);
         }
 
         html {
@@ -34,1865 +27,424 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-primary);
-            background: var(--bg-dark);
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body.light-mode {
-            --bg-dark: #f8f9fa;
-            --bg-darker: #ffffff;
-            --bg-card: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border-color: rgba(0, 0, 0, 0.08);
         }
 
         .container {
-            max-width: 1200px;
+            width: min(1100px, 92%);
             margin: 0 auto;
-            padding: 0 2rem;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
+        .site-header {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: var(--bg-darker);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            background: var(--bg);
+            border-bottom: 1px solid var(--line);
         }
 
-        .nav-container {
+        .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0.9rem 0;
+            gap: 1rem;
         }
 
-        .logo {
-            font-size: 1.25rem;
+        .brand {
+            font-size: 1.05rem;
             font-weight: 700;
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.3px;
         }
 
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
+        .nav-links {
             list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
         }
 
-        .nav-menu a {
+        .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
+            color: var(--text);
+            font-size: 0.95rem;
+            padding: 0.25rem 0.45rem;
+            border-radius: 4px;
         }
 
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--primary-blue);
+        .nav-links a:hover,
+        .nav-links a:focus {
+            background: var(--bg-soft);
+            outline: none;
         }
 
-        .nav-menu a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary-blue);
+        section {
+            padding: 3.5rem 0;
+            border-bottom: 1px solid var(--line);
         }
 
-        .theme-toggle {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
+        h1,
+        h2,
+        h3 {
+            color: var(--accent);
+            line-height: 1.25;
         }
 
-        .theme-toggle:hover {
-            background: var(--hover-bg);
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            margin-bottom: 0.8rem;
         }
 
-        /* Hero Section */
+        h2 {
+            font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+            margin-bottom: 1rem;
+        }
+
+        p,
+        li {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
         .hero {
-            position: relative;
-            min-height: 100vh;
+            padding-top: 4.2rem;
+        }
+
+        .hero p {
+            max-width: 750px;
+        }
+
+        .hero-actions {
             display: flex;
-            align-items: center;
-            padding: 100px 0 80px;
-            background: linear-gradient(135deg, rgba(91, 110, 245, 0.35), rgba(240, 148, 251, 0.25));
-            overflow: hidden;
-            isolation: isolate;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('full photo.jpg') center center / cover no-repeat;
-            filter: blur(2px);
-            transform: scale(1.02);
-            z-index: -2;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 30%, rgba(91, 110, 245, 0.35), transparent 35%),
-                        radial-gradient(circle at 80% 20%, rgba(245, 99, 179, 0.35), transparent 35%),
-                        linear-gradient(180deg, rgba(15, 23, 41, 0.75), rgba(10, 14, 26, 0.92));
-            z-index: -1;
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2.5rem;
-            background: rgba(10, 14, 26, 0.55);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 1.5rem;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 60px rgba(91, 110, 245, 0.35);
-            backdrop-filter: blur(12px);
-        }
-
-        .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 5rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            line-height: 1.1;
-            background: linear-gradient(135deg, #ffffff 0%, #b3c5ff 40%, #f093fb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 35px rgba(91, 110, 245, 0.35), 0 4px 15px rgba(0, 0, 0, 0.35);
-        }
-
-        .typing-text {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 3rem;
-            min-height: 50px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 0.5rem;
+            display: inline-block;
             text-decoration: none;
-            font-weight: 600;
+            border: 1px solid #202020;
+            background: #111111;
+            color: #ffffff;
+            padding: 0.55rem 1rem;
             font-size: 0.95rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #5b6ef5, #8b5cf6, #f093fb);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 15px 40px rgba(91, 110, 245, 0.4), 0 8px 20px rgba(240, 147, 251, 0.25);
+        .btn.secondary {
+            background: #ffffff;
+            color: #111111;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.01);
-            box-shadow: 0 20px 55px rgba(91, 110, 245, 0.55), 0 10px 28px rgba(240, 147, 251, 0.35);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.06);
-            color: var(--text-primary);
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 20px rgba(0,0,0,0.25);
-        }
-
-        .btn-secondary:hover {
-            border-color: rgba(91, 110, 245, 0.7);
-            background: rgba(91, 110, 245, 0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(91, 110, 245, 0.35);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--primary-blue);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-        }
-
-        /* About Section */
-        .about-content {
+        .grid-2 {
             display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
         }
 
-        .about-image {
-            position: relative;
+        .card {
+            border: 1px solid var(--line);
+            background: var(--card);
+            padding: 1rem;
         }
 
-        .profile-img {
-            width: 100%;
-            border-radius: 1rem;
-            border: 3px solid var(--primary-blue);
-            box-shadow: 0 20px 60px rgba(91, 110, 245, 0.3);
+        .list {
+            list-style: none;
+            display: grid;
+            gap: 0.65rem;
         }
 
-        .about-text {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 2rem;
+        .list li {
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 0.6rem;
         }
 
-        .about-info {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        .info-item {
-            display: flex;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .info-item:last-child {
+        .list li:last-child {
             border-bottom: none;
-        }
-
-        .info-label {
-            font-weight: 600;
-            min-width: 120px;
-            color: var(--text-primary);
-        }
-
-        .info-value {
-            color: var(--text-secondary);
-        }
-
-        .info-value a {
-            color: var(--primary-blue);
-            text-decoration: none;
-        }
-
-        /* Skills Section */
-        .skills-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .skill-category:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(91, 110, 245, 0.2);
-        }
-
-        .skill-category h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-level {
-            font-size: 0.85rem;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .skill-item {
-            background: var(--bg-darker);
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.5rem;
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .skill-item:hover {
-            border-color: var(--primary-blue);
-            background: var(--hover-bg);
-        }
-
-        .skill-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(91, 110, 245, 0.2);
-            border-color: var(--primary-blue);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, var(--primary-blue), #8b5cf6);
-            padding: 2.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-category {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.35rem 0.75rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        .project-body {
-            padding: 2rem;
+            padding-bottom: 0;
         }
 
         .project-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background: var(--hover-bg);
-            color: var(--primary-blue);
-            padding: 0.4rem 0.8rem;
-            border-radius: 0.4rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Experience & Education Timeline */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 100px;
-            margin-bottom: 3rem;
-        }
-
-        .timeline-icon {
-            position: absolute;
-            left: 38px;
-            width: 26px;
-            height: 26px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            border: 4px solid var(--bg-dark);
-        }
-
-        .timeline-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .timeline-content:hover {
-            border-color: var(--primary-blue);
-            transform: translateX(10px);
-        }
-
-        .timeline-date {
-            color: var(--primary-blue);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-subtitle {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .timeline-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .timeline-description ul {
-            margin-left: 1.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .timeline-description li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Tech Stack Section */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .tech-category {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 2rem;
-        }
-
-        .tech-category-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .tech-category-icon {
-            font-size: 1.5rem;
-        }
-
-        .tech-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .tech-item {
-            background: var(--bg-darker);
-            border: 1px solid var(--border-color);
-            padding: 0.6rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .tech-item:hover {
-            border-color: var(--primary-blue);
-            background: var(--hover-bg);
-            transform: translateY(-2px);
-        }
-
-        /* Blog Section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .blog-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(91, 110, 245, 0.2);
-            border-color: var(--primary-blue);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-blue), #8b5cf6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .blog-content {
-            padding: 2rem;
-        }
-
-        .blog-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .blog-badge {
-            background: var(--hover-bg);
-            color: var(--primary-blue);
-            padding: 0.35rem 0.75rem;
-            border-radius: 0.4rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .blog-date {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .blog-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-
-        .blog-excerpt {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .read-more {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Resume Section */
-        .resume-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 4rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .resume-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--hover-bg);
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin: 0 auto 2rem;
-        }
-
-        .resume-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
+            color: var(--text);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.2rem;
         }
 
-        .resume-description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .resume-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            background: var(--bg-darker);
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 2rem;
+        .footer {
+            padding: 2rem 0 2.5rem;
             text-align: center;
+            color: var(--muted);
+            font-size: 0.94rem;
         }
 
-        .stat-number {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+        a {
+            color: #1f1f1f;
         }
 
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .contact-intro {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .contact-intro h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .contact-intro p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
-
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-method {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .contact-method:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--hover-bg);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-        }
-
-        .contact-form {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            padding: 3rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: var(--bg-darker);
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px var(--hover-bg);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .form-submit {
-            width: 100%;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-darker);
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1.2rem;
-        }
-
-        .social-link:hover {
-            background: var(--primary-blue);
-            border-color: var(--primary-blue);
-            transform: translateY(-3px);
-        }
-
-        .footer-text {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Scroll to Top Button */
-        .scroll-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s;
-            z-index: 999;
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(91, 110, 245, 0.4);
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .about-content {
+        @media (max-width: 840px) {
+            .grid-2 {
                 grid-template-columns: 1fr;
-                text-align: center;
             }
 
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                padding-left: 60px;
-            }
-
-            .timeline-icon {
-                left: 8px;
-            }
-
-            .contact-form {
-                padding: 2rem;
-            }
-
-            .resume-box {
-                padding: 2rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .typing-text {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="nav-container">
-                <a href="#home" class="logo"> Emon </a>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#tech-stack">Tech Stack</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="theme-toggle" onclick="toggleTheme()">
-                    <span id="theme-icon">🌙</span>
-                </div>
-            </div>
+    <header class="site-header">
+        <div class="container nav">
+            <div class="brand">Md Sakib Hasan Emon</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#testing">Testing</a></li>
+                <li><a href="#references">References</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>I am Md Sakib Hasan Emon</h1>
-                <div class="typing-text" id="typing"></div>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <span>↓</span> View My Work
-                    </a>
-                    <a href="#resume" class="btn btn-secondary">
-                        <span>↓</span> Download Resume
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="full photo.jpg" alt="Profile" class="profile-img" onerror="this.style.display='none'">
-                </div>
-                <div>
-                    <h3 style="font-family: 'Poppins', sans-serif; font-size: 2rem; margin-bottom: 1rem;">About me</h3>
-                    <p class="about-text">
-                        CSE undergraduate with developing expertise in <strong>Machine Learning, AI, Front-End Development, Web Technologies, and Database Systems</strong>. Currently working on ML-based academic projects involving model training, data preprocessing, and evaluation. Skilled in creating responsive user interfaces, integrating APIs, and building data-driven applications. Strong understanding of programming fundamentals and a growing interest in practical AI implementation and modern web development.
-                    </p>
-                    <div class="about-info">
-                        <div class="info-item">
-                            <span class="info-label">Name:</span>
-                            <span class="info-value">Md Sakib Hasan Emon</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Location:</span>
-                            <span class="info-value">Dhaka, Bangladesh</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Profile:</span>
-                            <span class="info-value">CSE Undergraduate | Machine Learning & AI Enthusiast | Front-End & Web Developer</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Email:</span>
-                            <span class="info-value"><a href="mailto:mdsakibhasanemon@gmail.com">mdsakibhasanemon@gmail.com</a></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Phone:</span>
-                            <span class="info-value">+8801614633411</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">LinkedIn:</span>
-                            <span class="info-value"><a href="https://www.linkedin.com/in/mdsakibhasan26" target="_blank" rel="noreferrer">www.linkedin.com/in/mdsakibhasan26</a></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">GitHub:</span>
-                            <span class="info-value"><a href="https://github.com/EMON-26" target="_blank" rel="noreferrer">github.com/EMON-26</a></span>
-                        </div>
-                    </div>
-                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-                        <a href="#contact" class="btn btn-primary">Let's Connect</a>
-                        <a href="#projects" class="btn btn-secondary">View My Work</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">Technologies I Work With</p>
-            </div>
-            <div class="skills-categories">
-                <div class="skill-category">
-                    <h3>💻 Programming Languages</h3>
-                    <p class="skill-level">Python (ML data libraries), C, Java, HTML, CSS, JavaScript</p>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-icon">🐍</span>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">☕</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">☕</span>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">⚙️</span>
-                            <span>C/C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🐘</span>
-                            <span>PHP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🤖 ML & AI</h3>
-                    <p class="skill-level">Advanced: Python ML Stack | Intermediate: TensorFlow, SHAP (XAI)</p>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-icon">📊</span>
-                            <span>TensorFlow</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🔬</span>
-                            <span>Scikit-learn</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🐼</span>
-                            <span>Pandas</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">💡</span>
-                            <span>SHAP (XAI)</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📈</span>
-                            <span>NumPy</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📊</span>
-                            <span>Matplotlib</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🌐 Web Development</h3>
-                    <p class="skill-level">Front-End: HTML, CSS, JavaScript | Back-End: PHP, MySQL, REST APIs</p>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-icon">🌐</span>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🎨</span>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">💼</span>
-                            <span>Bootstrap</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🗄️</span>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🔌</span>
-                            <span>APIs</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>� Tech Areas</h3>
-                    <p class="skill-level">Machine Learning, Data Processing, Model Deployment, Front-End Development</p>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-icon">🤖</span>
-                            <span>Machine Learning</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📊</span>
-                            <span>Data Processing</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🚀</span>
-                            <span>Model Deployment</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🎨</span>
-                            <span>Front-End Development</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🛠️ Tools</h3>
-                    <p class="skill-level">Git, LaTeX, Streamlit, MS Office</p>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-icon">🐙</span>
-                            <span>Git/GitHub</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">💻</span>
-                            <span>Jupyter</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📝</span>
-                            <span>VS Code</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🐧</span>
-                            <span>Linux</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🐳</span>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🔥</span>
-                            <span>Firebase</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>💡 Soft Skills</h3>
-                    <p class="skill-level">Professional Competencies</p>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-icon">🗣️</span>
-                            <span>Communication</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🤝</span>
-                            <span>Collaboration</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🔄</span>
-                            <span>Adaptability</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🌍 Languages</h3>
-                    <p class="skill-level">Communication Languages</p>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-icon">🇧🇩</span>
-                            <span>Bangla (Native)</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🇬🇧</span>
-                            <span>English (Fluent)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">My Featured Work</p>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🏢</div>
-                        <span class="project-category">Networking / IoT</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">SmartOffice Project</h3>
-                        <p class="project-description">
-                            Designed and simulated an IoT-enabled smart office environment featuring automated lighting, climate control, smoke detection, energy optimization via solar power, and RFID-based access control. Demonstrated device interconnectivity and automation workflows.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">IoT</span>
-                            <span class="tag">Networking</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">RFID</span>
-                        </div>
-                        <a href="https://github.com/EMON-26" target="_blank" class="project-link">
-                            <span>View on GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🛒</div>
-                        <span class="project-category">Assembly Language</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">Shopping Management System</h3>
-                        <p class="project-description">
-                            Developed a low-level product management system using Assembly, supporting item insertion, updating, deletion, billing, and inventory tracking through register-level operations.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Assembly</span>
-                            <span class="tag">Low-Level Programming</span>
-                            <span class="tag">Inventory</span>
-                        </div>
-                        <a href="https://github.com/EMON-26" target="_blank" class="project-link">
-                            <span>View on GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">📦</div>
-                        <span class="project-category">Shell Script</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">Inventory Management System</h3>
-                        <p class="project-description">
-                            Built a menu-driven shell application enabling adding, updating, sorting, searching, and generating low-stock reports using bash utilities such as grep, sed, and awk. Ensured data integrity using text-based record structures.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Shell Script</span>
-                            <span class="tag">Bash</span>
-                            <span class="tag">Data Management</span>
-                        </div>
-                        <a href="https://github.com/EMON-26" target="_blank" class="project-link">
-                            <span>View on GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🧠</div>
-                        <span class="project-category">Deep Learning / NLP</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">Banglish Mental Health Classification</h3>
-                        <p class="project-description">
-                            Implemented a hybrid deep learning model for emotion and mental-health severity classification from code-mixed Bangla-English (Banglish) social media text. Includes NLP preprocessing, transformer-based modeling, and multi-task learning.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Deep Learning</span>
-                            <span class="tag">NLP</span>
-                            <span class="tag">Transformers</span>
-                            <span class="tag">Python</span>
-                        </div>
-                        <a href="https://github.com/EMON-26" target="_blank" class="project-link">
-                            <span>View on GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">👥</div>
-                        <span class="project-category">Java / GUI</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">EmployManagement System</h3>
-                        <p class="project-description">
-                            Designed a Java-based employee management application with GUI forms for adding, searching, updating, and removing employee records using Swing and file/database handling.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Swing</span>
-                            <span class="tag">GUI</span>
-                            <span class="tag">Database</span>
-                        </div>
-                        <a href="https://github.com/EMON-26" target="_blank" class="project-link">
-                            <span>View on GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">✅</div>
-                        <span class="project-category">Java / Logic</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">PrerequisiteCheck</h3>
-                        <p class="project-description">
-                            Created a compact Java program for validating prerequisite course requirements using conditional logic and structured rule checking.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Logic Programming</span>
-                            <span class="tag">Validation</span>
-                        </div>
-                        <a href="https://github.com/EMON-26" target="_blank" class="project-link">
-                            <span>View on GitHub</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Experience</h2>
-                <p class="section-subtitle">My professional journey</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023 - 2024</div>
-                        <h3 class="timeline-title">Teaching Support Experience</h3>
-                        <p class="timeline-subtitle">Academic & Technical</p>
-                        <div class="timeline-description">
-                            <ul>
-                                <li>Assisted learners with basic ICT and academic tasks</li>
-                                <li>Explained concepts clearly and provided general study support</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2021 - 2022</div>
-                        <h3 class="timeline-title">Technical Assistance (Informal)</h3>
-                        <p class="timeline-subtitle">Peer Support</p>
-                        <div class="timeline-description">
-                            <ul>
-                                <li>Helped peers with programming basics and simple technical problems</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Education</h2>
-                <p class="section-subtitle">My academic background</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 - PRESENT</div>
-                        <h3 class="timeline-title">B.Sc. Computer Science & Engineering</h3>
-                        <p class="timeline-subtitle">Green University of Bangladesh</p>
-                        <div class="timeline-description">
-                            <p><strong>Focus:</strong> AI/ML, Web Development, Software Engineering</p>
-                            <p><strong>CGPA:</strong> 3.40 / 4.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2018 - 2020</div>
-                        <h3 class="timeline-title">HSC (Science)</h3>
-                        <p class="timeline-subtitle">Mymensingh Govt. College</p>
-                        <div class="timeline-description">
-                            <p><strong>GPA:</strong> 5.00 / 5.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack Section -->
-    <section id="tech-stack">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tech Stack</h2>
-                <p class="section-subtitle">Tools, frameworks, and technologies I work with</p>
-            </div>
-            <div class="tech-grid">
-                <div class="tech-category">
-                    <h3 class="tech-category-title">
-                        <span class="tech-category-icon">💻</span>
-                        Languages
-                    </h3>
-                    <div class="tech-items">
-                        <div class="tech-item">⚡ Python</div>
-                        <div class="tech-item">⚡ JavaScript</div>
-                        <div class="tech-item">⚡ Java</div>
-                        <div class="tech-item">⚡ C/C++</div>
-                        <div class="tech-item">⚡ PHP</div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3 class="tech-category-title">
-                        <span class="tech-category-icon">🤖</span>
-                        ML & AI
-                    </h3>
-                    <div class="tech-items">
-                        <div class="tech-item">TensorFlow</div>
-                        <div class="tech-item">Scikit-learn</div>
-                        <div class="tech-item">Pandas</div>
-                        <div class="tech-item">NumPy</div>
-                        <div class="tech-item">SHAP</div>
-                        <div class="tech-item">Matplotlib</div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3 class="tech-category-title">
-                        <span class="tech-category-icon">🌐</span>
-                        Web Dev
-                    </h3>
-                    <div class="tech-items">
-                        <div class="tech-item">HTML5</div>
-                        <div class="tech-item">CSS3</div>
-                        <div class="tech-item">Bootstrap</div>
-                        <div class="tech-item">MySQL</div>
-                        <div class="tech-item">APIs</div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3 class="tech-category-title">
-                        <span class="tech-category-icon">🛠️</span>
-                        Tools & Platforms
-                    </h3>
-                    <div class="tech-items">
-                        <div class="tech-item">Git/GitHub</div>
-                        <div class="tech-item">Jupyter</div>
-                        <div class="tech-item">VS Code</div>
-                        <div class="tech-item">Linux</div>
-                        <div class="tech-item">Docker</div>
-                        <div class="tech-item">Firebase</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Section -->
-    <section id="research">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Research</h2>
-                <p class="section-subtitle">Ongoing research and development</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Ongoing</div>
-                        <h3 class="timeline-title">Mental Health Classification from Social Media Data using Deep Learning</h3>
-                        <p class="timeline-subtitle">Research Paper (In Progress)</p>
-                        <div class="timeline-description">
-                            <p>Conducting research on Banglish (code-mixed) social media text to develop a hybrid deep learning framework incorporating transformer-based architectures and multi-task learning for emotion detection and mental health severity prediction. The work emphasizes robust preprocessing, contextual feature extraction, and model evaluation across diverse linguistic patterns.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Technical Blog</h2>
-                <p class="section-subtitle">Sharing knowledge and insights on AI, ML, and Software Development</p>
-            </div>
-            <div class="blog-grid">
-                <!-- Blog Post 1 -->
-                <div class="blog-card">
-                    <div class="blog-image">📊</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-badge">MACHINE LEARNING</span>
-                            <span class="blog-badge">XAI</span>
-                            <span class="blog-date">📅 Dec 2024</span>
-                        </div>
-                        <h3 class="blog-title">Understanding SHAP: Making ML Models Explainability</h3>
-                        <p class="blog-excerpt">
-                            Exploring Shapley Additive Explanations (SHAP) for interpreting complex machine learning 
-                            models in healthcare applications. Learn how SHAP values help understand feature importance 
-                            and model decisions in clinical settings.
-                        </p>
-                        <a href="#" class="read-more">
-                            <span>Read More</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Blog Post 2 -->
-                <div class="blog-card">
-                    <div class="blog-image">🗂️</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-badge">DATA SCIENCE</span>
-                            <span class="blog-badge">PYTHON</span>
-                            <span class="blog-date">📅 Nov 2024</span>
-                        </div>
-                        <h3 class="blog-title">Data Preprocessing Best Practices for ML</h3>
-                        <p class="blog-excerpt">
-                            A comprehensive guide to data cleaning, feature engineering, and preprocessing techniques 
-                            using Pandas and Scikit-learn. From handling missing values to feature scaling and encoding 
-                            categorical variables.
-                        </p>
-                        <a href="#" class="read-more">
-                            <span>Read More</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Blog Post 3 -->
-                <div class="blog-card">
-                    <div class="blog-image">🧮</div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-badge">ALGORITHMS</span>
-                            <span class="blog-badge">C++</span>
-                            <span class="blog-date">📅 Oct 2024</span>
-                        </div>
-                        <h3 class="blog-title">Dynamic Programming: From Basics to Advanced</h3>
-                        <p class="blog-excerpt">
-                            Master dynamic programming concepts with real-world examples from competitive programming. 
-                            Covering memoization, tabulation, and optimization techniques to solve complex algorithmic 
-                            challenges efficiently.
-                        </p>
-                        <a href="#" class="read-more">
-                            <span>Read More</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume">
-        <div class="container">
-            <div class="resume-box">
-                <div class="resume-icon">📄</div>
-                <h2 class="resume-title">Download My Resume</h2>
-                <p class="resume-description">
-                    Get a complete overview of my qualifications, professional experience, academic background, and 
-                    achievements in AI/ML and software development.
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>CSE Undergraduate | Machine Learning, Data Mining, Deep Learning & NLP</h1>
+                <p>
+                    Computer Science and Engineering undergraduate with a strong academic focus on Machine Learning, Data Mining,
+                    Deep Learning, and NLP. Experienced in data collection, preprocessing, feature engineering, model training,
+                    and evaluation using Python-based ML frameworks.
                 </p>
-                <div class="resume-buttons">
-                    <a href="resume.pdf" download="Md_Sakib_Hasan_Emon_Resume.pdf" class="btn btn-primary">
-                        <span>↓</span> Download Resume
-                    </a>
-                    <a href="https://github.com/EMON-26" target="_blank" rel="noreferrer" class="btn btn-secondary">
-                        <span>🐙</span> GitHub Profile
-                    </a>
+                <div class="hero-actions">
+                    <a class="btn" href="#projects">View Projects</a>
+                    <a class="btn secondary" href="#contact">Contact Me</a>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Projects</div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <p>
+                            Actively involved in research on mental health prediction from social media data and currently
+                            seeking ML-focused internship or research assistant opportunities. I am also involved in software
+                            testing and QA activities for practical project reliability.
+                        </p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">Yrs Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">Technologies</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Dedication</div>
+                    <div class="card">
+                        <ul class="list">
+                            <li><strong>Location:</strong> Dhaka, Bangladesh</li>
+                            <li><strong>Phone:</strong> +880 1614-633411</li>
+                            <li><strong>Email:</strong> mdsakibhasanemon@gmail.com</li>
+                            <li><strong>Languages:</strong> Bangla (Native), English (Fluent)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+        <section id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Programming</h3>
+                        <ul class="list">
+                            <li>Python, C, Java</li>
+                            <li>Data structures and OOP fundamentals</li>
+                            <li>Problem solving and algorithmic thinking</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Machine Learning</h3>
+                        <ul class="list">
+                            <li>Supervised Learning, Classification, Regression</li>
+                            <li>Clustering, Feature Engineering, Model Evaluation</li>
+                            <li>Data preprocessing and workflow debugging</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Data Mining, Deep Learning & NLP</h3>
+                        <ul class="list">
+                            <li>Data Cleaning, EDA, Pattern Discovery, Text Mining</li>
+                            <li>Neural Networks, Transformer Models (Introductory)</li>
+                            <li>Tokenization, Embeddings, Code-Mixed Text Processing</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Software Testing & QA</h3>
+                        <ul class="list">
+                            <li>Manual and Functional Testing</li>
+                            <li>Test Case Design, Bug Reporting, Requirement Validation</li>
+                            <li>System Testing, Test Scenario Writing, Git Issue Tracking</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Libraries & Tools</h3>
+                        <ul class="list">
+                            <li>NumPy, Pandas, Scikit-learn</li>
+                            <li>TensorFlow (basic), PyTorch (basic)</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Utilities</h3>
+                        <ul class="list">
+                            <li>Bash</li>
+                            <li>LaTeX</li>
+                            <li>Streamlit</li>
+                            <li>MS Office</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="card">
+                    <ul class="list">
+                        <li>
+                            <div class="project-title">UNITY AID - Community Driven Emergency Helping Platform (IDP)</div>
+                            Designed and developed a web-based emergency response platform connecting people in need with
+                            volunteers and organizations. Implemented role-based access control, verified case management,
+                            real-time request tracking, and location-based coordination.
+                            <br />QA Contribution: Conducted manual testing with designed test cases, verified user flows and
+                            form validation, and improved reliability through systematic bug reporting.
+                        </li>
+                        <li>
+                            <div class="project-title">Banglish Mental Health Classification (ML & Deep Learning)</div>
+                            Developed an NLP-based ML system for emotion and mental health severity classification from
+                            Bangla-English code-mixed social media data.
+                        </li>
+                        <li>
+                            <div class="project-title">ARFF Dataset Analysis & Decision Tree Exploration (Data Mining)</div>
+                            Implemented data preprocessing, feature analysis, and decision tree modeling on ARFF datasets.
+                        </li>
+                        <li>
+                            <div class="project-title">Employee Management System (Java)</div>
+                            Built a structured CRUD-based desktop application using Java Swing.
+                        </li>
+                        <li>
+                            <div class="project-title">Inventory Management System (Shell Script)</div>
+                            Developed a menu-driven system supporting structured data storage and reporting.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h2>Education & Experience</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Education</h3>
+                        <ul class="list">
+                            <li>
+                                <strong>Green University of Bangladesh</strong><br />
+                                B.Sc. in Computer Science & Engineering, CGPA 3.43/4.00 (2022 - Present)
+                            </li>
+                            <li>
+                                <strong>Mymensingh Govt. College</strong><br />
+                                Higher Secondary Certificate (Science), GPA 5.00/5.00 (2018 - 2020)
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Experience & Research</h3>
+                        <ul class="list">
+                            <li>Academic & Technical Support (Informal) (2021 - 2022)</li>
+                            <li>Software Testing & QA Contributor - UNITY AID (IDP) (2025)</li>
+                            <li>Peer ML & Data Analysis Assistance (Informal) (2023 - 2024)</li>
+                            <li>
+                                Ongoing research on mental health classification from social media text
+                                using supervised ML models and transformer-based architectures.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testing">
+            <div class="container">
+                <h2>Testing Portfolio & Awards</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Testing Portfolio</h3>
+                        <ul class="list">
+                            <li>
+                                UNITY AID Test Case Documentation and QA Reports:<br />
+                                <a href="https://github.com/EMON-26/unity-aid-testing" target="_blank" rel="noopener">github.com/EMON-26/unity-aid-testing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Award</h3>
+                        <ul class="list">
+                            <li>Integrated Design Project (IDP) Recognition - UNITY AID, Department of CSE, Green University of Bangladesh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="references">
+            <div class="container">
+                <h2>References</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Dr. Md. Solaiman Mia</h3>
+                        <ul class="list">
+                            <li>Assistant Professor, Department of Computer Science & Engineering</li>
+                            <li>Green University of Bangladesh</li>
+                            <li>Email: <a href="mailto:solaiman.mia@green.edu.bd">solaiman.mia@green.edu.bd</a></li>
+                            <li>Phone: <a href="tel:+8801976524626">+880 1976-524626</a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Subhoraj Hossain</h3>
+                        <ul class="list">
+                            <li>Assistant Zonal Manager, Radiant Pharmaceuticals Ltd.</li>
+                            <li>Email: <a href="mailto:subhoraj.hossain@radiantpharma.com">subhoraj.hossain@radiantpharma.com</a></li>
+                            <li>Phone: <a href="tel:+8801811448478">+880 1811-448478</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="card">
+                    <ul class="list">
+                        <li>Email: <a href="mailto:mdsakibhasanemon@gmail.com">mdsakibhasanemon@gmail.com</a></li>
+                        <li>Phone: <a href="tel:+8801614633411">+880 1614-633411</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/mdsakibhasan26" target="_blank" rel="noopener">www.linkedin.com/in/mdsakibhasan26</a></li>
+                        <li>GitHub: <a href="https://github.com/EMON-26" target="_blank" rel="noopener">github.com/EMON-26</a></li>
+                        <li>Declaration: Information provided is accurate and authentic to the best of my knowledge (Date: February 17, 2026).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-intro">
-                    <h2>Get In Touch</h2>
-                    <p>Let's build something amazing together</p>
-                </div>
-                
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <div class="contact-icon">✉️</div>
-                        <h4>Email</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">mdsakibhasanemon@gmail.com</p>
-                    </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">📞</div>
-                        <h4>Phone</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">+8801614633411</p>
-                    </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">👤</div>
-                        <h4>LinkedIn</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">mdsakibhasan26</p>
-                    </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">🐙</div>
-                        <h4>GitHub</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">EMON-26</p>
-                    </div>
-                </div>
-
-                <div class="contact-form">
-                    <h3 style="font-family: 'Poppins', sans-serif; margin-bottom: 2rem; text-align: center;">Send Me a Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" placeholder="What's this about?" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" placeholder="Tell me more..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
-                    </form>
-                </div>
-
-                <div class="social-links" style="margin-top: 3rem;">
-                    <a href="https://github.com/EMON-26" target="_blank" rel="noreferrer" class="social-link" title="GitHub">🐙</a>
-                    <a href="https://www.linkedin.com/in/mdsakibhasan26" target="_blank" rel="noreferrer" class="social-link" title="LinkedIn">💼</a>
-                    <a href="mailto:mdsakibhasanemon@gmail.com" class="social-link" title="Email">✉️</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Md Sakib Hasan Emon</div>
-                <p class="footer-text">
-                    Computer Science & Engineering Student | Machine Learning & AI Enthusiast<br>
-                    Building innovative solutions through AI and modern web technologies
-                </p>
-            </div>
-            <div class="footer-text">
-                © 2026 Md Sakib Hasan Emon. All rights reserved.
-            </div>
+            <p>&copy; 2026 Md Sakib Hasan Emon. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop">↑</div>
-
-    <script>
-        // Typing Animation
-        const texts = [
-            "Computer Science Student",
-            "Machine Learning Engineer",
-            "AI Enthusiast",
-            "Full-Stack Developer",
-            "Competitive Programmer"
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.getElementById('typing');
-
-        function type() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentText.length) {
-                setTimeout(() => isDeleting = true, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-            }
-
-            const speed = isDeleting ? 50 : 100;
-            setTimeout(type, speed);
-        }
-
-        type();
-
-        // Theme Toggle
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const icon = document.getElementById('theme-icon');
-            icon.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
-        }
-
-        // Scroll to Top
-        const scrollTop = document.getElementById('scrollTop');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
-        });
-
-        scrollTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Active Navigation
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-menu a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Form Submission
-        document.querySelector('.contact-form form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            e.target.reset();
-        });
-    </script>
 </body>
 </html>
