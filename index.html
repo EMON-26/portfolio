@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
         :root {
             --bg: #0b0b0b;
@@ -222,6 +223,19 @@
             font-size: 1.9rem;
         }
 
+        .title-icon {
+            margin-right: 0.5rem;
+            color: #d9d9d9;
+            font-size: 0.9em;
+        }
+
+        .inline-icon {
+            margin-right: 0.45rem;
+            color: #bfbfbf;
+            width: 1rem;
+            text-align: center;
+        }
+
         .section-head span {
             color: var(--muted);
             font-size: 0.8rem;
@@ -314,6 +328,9 @@
             color: #ddd;
             padding: 0.3rem 0.5rem;
             border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         .projects {
@@ -351,6 +368,15 @@
         .project h3 {
             margin-bottom: 0.3rem;
             font-size: 1.06rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .project-logo {
+            width: 1.15rem;
+            text-align: center;
+            color: #d7d7d7;
         }
 
         .project p {
@@ -436,14 +462,14 @@
         <div class="container nav">
             <div class="brand">Md Sakib Hasan Emon</div>
             <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#skills"><i class="fa-solid fa-code"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+                <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+                <li><a href="#research"><i class="fa-solid fa-microscope"></i> Research</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-address-book"></i> Contact</a></li>
             </ul>
         </div>
     </header>
@@ -477,7 +503,7 @@
 
         <section id="about">
             <div class="container">
-                <div class="section-head"><h2>About</h2><span>Profile</span></div>
+                <div class="section-head"><h2><i class="fa-solid fa-circle-user title-icon"></i>About</h2><span>Profile</span></div>
                 <div class="about-wrap">
                     <div class="about-image-card">
                         <img src="full photo.jpg" alt="Profile" />
@@ -490,12 +516,12 @@
                             into useful, testable, and dependable systems.
                         </p>
                         <ul class="list" style="margin-top: 1rem;">
-                            <li><strong>Name:</strong> Md Sakib Hasan Emon</li>
-                            <li><strong>Location:</strong> Dhaka, Bangladesh</li>
-                            <li><strong>Phone:</strong> +880 1614-633411</li>
-                            <li><strong>Email:</strong> mdsakibhasanemon@gmail.com</li>
-                            <li><strong>LinkedIn:</strong> linkedin.com/in/mdsakibhasan26</li>
-                            <li><strong>GitHub:</strong> github.com/EMON-26</li>
+                            <li><i class="fa-solid fa-id-card inline-icon"></i><strong>Name:</strong> Md Sakib Hasan Emon</li>
+                            <li><i class="fa-solid fa-location-dot inline-icon"></i><strong>Location:</strong> Dhaka, Bangladesh</li>
+                            <li><i class="fa-solid fa-phone inline-icon"></i><strong>Phone:</strong> +880 1614-633411</li>
+                            <li><i class="fa-solid fa-envelope inline-icon"></i><strong>Email:</strong> mdsakibhasanemon@gmail.com</li>
+                            <li><i class="fa-brands fa-linkedin inline-icon"></i><strong>LinkedIn:</strong> linkedin.com/in/mdsakibhasan26</li>
+                            <li><i class="fa-brands fa-github inline-icon"></i><strong>GitHub:</strong> github.com/EMON-26</li>
                         </ul>
                     </div>
                 </div>
@@ -504,26 +530,26 @@
 
         <section id="skills">
             <div class="container">
-                <div class="section-head"><h2>Skills</h2><span>Capabilities</span></div>
+                <div class="section-head"><h2><i class="fa-solid fa-laptop-code title-icon"></i>Skills</h2><span>Capabilities</span></div>
                 <div class="grid-2">
                     <div class="card">
                         <ul class="list">
-                            <li><strong>Programming:</strong> Python, C, Java</li>
-                            <li><strong>Machine Learning:</strong> Supervised Learning, Classification, Regression, Clustering</li>
-                            <li><strong>Data Mining:</strong> Data Cleaning, Preprocessing, Pattern Discovery, EDA</li>
+                            <li><i class="fa-solid fa-code inline-icon"></i><strong>Programming:</strong> Python, C, Java</li>
+                            <li><i class="fa-solid fa-brain inline-icon"></i><strong>Machine Learning:</strong> Supervised Learning, Classification, Regression, Clustering</li>
+                            <li><i class="fa-solid fa-database inline-icon"></i><strong>Data Mining:</strong> Data Cleaning, Preprocessing, Pattern Discovery, EDA</li>
                         </ul>
                         <div class="tags">
-                            <span>Python</span><span>C</span><span>Java</span><span>Classification</span><span>Regression</span><span>EDA</span>
+                            <span><i class="fa-brands fa-python"></i>Python</span><span><i class="fa-solid fa-c"></i>C</span><span><i class="fa-brands fa-java"></i>Java</span><span><i class="fa-solid fa-filter"></i>Classification</span><span><i class="fa-solid fa-chart-line"></i>Regression</span><span><i class="fa-solid fa-magnifying-glass-chart"></i>EDA</span>
                         </div>
                     </div>
                     <div class="card">
                         <ul class="list">
-                            <li><strong>Deep Learning & NLP:</strong> Neural Networks, Transformer Models, Tokenization, Embeddings</li>
-                            <li><strong>Software QA:</strong> Manual Testing, Functional Testing, Test Case Design, Bug Reporting</li>
-                            <li><strong>Tools:</strong> NumPy, Pandas, Scikit-learn, TensorFlow (basic), PyTorch (basic), Git, Bash, LaTeX, Streamlit</li>
+                            <li><i class="fa-solid fa-robot inline-icon"></i><strong>Deep Learning & NLP:</strong> Neural Networks, Transformer Models, Tokenization, Embeddings</li>
+                            <li><i class="fa-solid fa-vial-circle-check inline-icon"></i><strong>Software QA:</strong> Manual Testing, Functional Testing, Test Case Design, Bug Reporting</li>
+                            <li><i class="fa-solid fa-toolbox inline-icon"></i><strong>Tools:</strong> NumPy, Pandas, Scikit-learn, TensorFlow (basic), PyTorch (basic), Git, Bash, LaTeX, Streamlit</li>
                         </ul>
                         <div class="tags">
-                            <span>TensorFlow</span><span>PyTorch</span><span>NLP</span><span>Testing</span><span>Git</span><span>Streamlit</span>
+                            <span><i class="fa-solid fa-microchip"></i>TensorFlow</span><span><i class="fa-solid fa-fire"></i>PyTorch</span><span><i class="fa-solid fa-language"></i>NLP</span><span><i class="fa-solid fa-bug"></i>Testing</span><span><i class="fa-brands fa-git-alt"></i>Git</span><span><i class="fa-solid fa-chart-simple"></i>Streamlit</span>
                         </div>
                     </div>
                 </div>
@@ -532,35 +558,35 @@
 
         <section id="projects">
             <div class="container">
-                <div class="section-head"><h2>Projects</h2><span>Selected Work</span></div>
+                <div class="section-head"><h2><i class="fa-solid fa-diagram-project title-icon"></i>Projects</h2><span>Selected Work</span></div>
                 <div class="projects">
                     <article class="project" data-title="UNITY AID - Community Driven Emergency Helping Platform (IDP)" data-body="Designed and developed a web-based emergency response platform connecting people in need with volunteers and organizations. Implemented role-based access control, verified case management, real-time request tracking, and location-based coordination. QA contribution included manual test case execution, form validation checks, and structured bug reporting.">
                         <div class="project-thumb" aria-hidden="true"></div>
-                        <h3>UNITY AID (IDP)</h3>
+                        <h3><i class="fa-solid fa-shield-heart project-logo"></i>UNITY AID (IDP)</h3>
                         <p>Emergency response platform with role-based workflow and QA validation.</p>
                         <div class="meta">Web Platform / QA / IDP</div>
                     </article>
                     <article class="project" data-title="Banglish Mental Health Classification (ML & Deep Learning)" data-body="Developed an NLP-based machine learning system for emotion and mental health severity classification from Bangla-English code-mixed social media data, including preprocessing and model evaluation stages.">
                         <div class="project-thumb" aria-hidden="true"></div>
-                        <h3>Banglish Mental Health Classification</h3>
+                        <h3><i class="fa-solid fa-comments project-logo"></i>Banglish Mental Health Classification</h3>
                         <p>NLP pipeline for code-mixed emotion and severity classification.</p>
                         <div class="meta">ML / NLP / Research</div>
                     </article>
                     <article class="project" data-title="ARFF Dataset Analysis & Decision Tree Exploration" data-body="Implemented data preprocessing, feature analysis, and decision tree modeling on ARFF datasets for data mining experimentation and structured learning analysis.">
                         <div class="project-thumb" aria-hidden="true"></div>
-                        <h3>ARFF Dataset Analysis</h3>
+                        <h3><i class="fa-solid fa-chart-column project-logo"></i>ARFF Dataset Analysis</h3>
                         <p>Data mining workflow with feature analysis and decision tree modeling.</p>
                         <div class="meta">Data Mining</div>
                     </article>
                     <article class="project" data-title="Employee Management System (Java)" data-body="Built a structured CRUD-based desktop application using Java Swing for handling employee records with a clean workflow.">
                         <div class="project-thumb" aria-hidden="true"></div>
-                        <h3>Employee Management System</h3>
+                        <h3><i class="fa-solid fa-users-gear project-logo"></i>Employee Management System</h3>
                         <p>Java Swing desktop CRUD application for employee record operations.</p>
                         <div class="meta">Java / Desktop</div>
                     </article>
                     <article class="project" data-title="Inventory Management System (Shell Script)" data-body="Developed a menu-driven shell script system supporting structured record handling, updates, and reporting features.">
                         <div class="project-thumb" aria-hidden="true"></div>
-                        <h3>Inventory Management System</h3>
+                        <h3><i class="fa-solid fa-boxes-stacked project-logo"></i>Inventory Management System</h3>
                         <p>Menu-driven shell-based inventory records and reporting utility.</p>
                         <div class="meta">Shell Script</div>
                     </article>
@@ -570,19 +596,19 @@
 
         <section id="education">
             <div class="container">
-                <div class="section-head"><h2>Education</h2><span>Academic</span></div>
+                <div class="section-head"><h2><i class="fa-solid fa-graduation-cap title-icon"></i>Education</h2><span>Academic</span></div>
                 <div class="grid-2">
                     <div class="card">
                         <ul class="list">
-                            <li><strong>Green University of Bangladesh</strong><br />B.Sc. in Computer Science & Engineering<br />CGPA: 3.43 / 4.00<br />2022 - Present</li>
-                            <li><strong>Mymensingh Govt. College</strong><br />Higher Secondary Certificate (Science)<br />GPA: 5.00 / 5.00<br />2018 - 2020</li>
+                            <li><i class="fa-solid fa-university inline-icon"></i><strong>Green University of Bangladesh</strong><br />B.Sc. in Computer Science & Engineering<br />CGPA: 3.43 / 4.00<br />2022 - Present</li>
+                            <li><i class="fa-solid fa-school inline-icon"></i><strong>Mymensingh Govt. College</strong><br />Higher Secondary Certificate (Science)<br />GPA: 5.00 / 5.00<br />2018 - 2020</li>
                         </ul>
                     </div>
                     <div class="card">
                         <ul class="list">
-                            <li><strong>Testing Portfolio:</strong> github.com/EMON-26/unity-aid-testing</li>
-                            <li><strong>Award:</strong> IDP Recognition - UNITY AID, Department of CSE, Green University of Bangladesh</li>
-                            <li><strong>Languages:</strong> Bangla (Native), English (Professional)</li>
+                            <li><i class="fa-solid fa-clipboard-check inline-icon"></i><strong>Testing Portfolio:</strong> github.com/EMON-26/unity-aid-testing</li>
+                            <li><i class="fa-solid fa-award inline-icon"></i><strong>Award:</strong> IDP Recognition - UNITY AID, Department of CSE, Green University of Bangladesh</li>
+                            <li><i class="fa-solid fa-earth-asia inline-icon"></i><strong>Languages:</strong> Bangla (Native), English (Professional)</li>
                         </ul>
                     </div>
                 </div>
@@ -591,13 +617,13 @@
 
         <section id="experience">
             <div class="container">
-                <div class="section-head"><h2>Experience</h2><span>Practical Work</span></div>
+                <div class="section-head"><h2><i class="fa-solid fa-briefcase title-icon"></i>Experience</h2><span>Practical Work</span></div>
                 <div class="grid-2">
                     <div class="card">
                         <ul class="list">
-                            <li><strong>Academic & Technical Support (Informal)</strong><br />2021 - 2022</li>
-                            <li><strong>Peer ML & Data Analysis Assistance (Informal)</strong><br />2023 - 2024</li>
-                            <li><strong>Software Testing & QA Contributor - UNITY AID (IDP)</strong><br />2025</li>
+                            <li><i class="fa-solid fa-chalkboard-user inline-icon"></i><strong>Academic & Technical Support (Informal)</strong><br />2021 - 2022</li>
+                            <li><i class="fa-solid fa-people-group inline-icon"></i><strong>Peer ML & Data Analysis Assistance (Informal)</strong><br />2023 - 2024</li>
+                            <li><i class="fa-solid fa-shield-check inline-icon"></i><strong>Software Testing & QA Contributor - UNITY AID (IDP)</strong><br />2025</li>
                         </ul>
                     </div>
                     <div class="card">
@@ -613,7 +639,7 @@
 
         <section id="research">
             <div class="container">
-                <div class="section-head"><h2>Research</h2><span>Ongoing</span></div>
+                <div class="section-head"><h2><i class="fa-solid fa-microscope title-icon"></i>Research</h2><span>Ongoing</span></div>
                 <div class="card">
                     <p>
                         Mental Health Classification from Social Media Data using Machine Learning and Deep Learning.
@@ -626,18 +652,18 @@
 
         <section id="contact">
             <div class="container">
-                <div class="section-head"><h2>Contact</h2><span>Get in touch</span></div>
+                <div class="section-head"><h2><i class="fa-solid fa-address-book title-icon"></i>Contact</h2><span>Get in touch</span></div>
                 <div class="grid-2">
                     <div class="card">
                         <ul class="list">
-                            <li><strong>Email:</strong> <a href="mailto:mdsakibhasanemon@gmail.com">mdsakibhasanemon@gmail.com</a></li>
-                            <li><strong>Phone:</strong> <a href="tel:+8801614633411">+880 1614-633411</a></li>
-                            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mdsakibhasan26" target="_blank" rel="noopener">linkedin.com/in/mdsakibhasan26</a></li>
-                            <li><strong>GitHub:</strong> <a href="https://github.com/EMON-26" target="_blank" rel="noopener">github.com/EMON-26</a></li>
+                            <li><i class="fa-solid fa-envelope inline-icon"></i><strong>Email:</strong> <a href="mailto:mdsakibhasanemon@gmail.com">mdsakibhasanemon@gmail.com</a></li>
+                            <li><i class="fa-solid fa-phone inline-icon"></i><strong>Phone:</strong> <a href="tel:+8801614633411">+880 1614-633411</a></li>
+                            <li><i class="fa-brands fa-linkedin inline-icon"></i><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mdsakibhasan26" target="_blank" rel="noopener">linkedin.com/in/mdsakibhasan26</a></li>
+                            <li><i class="fa-brands fa-github inline-icon"></i><strong>GitHub:</strong> <a href="https://github.com/EMON-26" target="_blank" rel="noopener">github.com/EMON-26</a></li>
                         </ul>
                     </div>
                     <div class="card">
-                        <h3 style="margin-bottom: 0.7rem;">References</h3>
+                        <h3 style="margin-bottom: 0.7rem;"><i class="fa-solid fa-user-group title-icon"></i>References</h3>
                         <ul class="list">
                             <li><strong>Dr. Md. Solaiman Mia</strong><br />Assistant Professor, CSE, Green University of Bangladesh<br />solaiman.mia@green.edu.bd | +880 1976-524626</li>
                             <li><strong>Subhoraj Hossain</strong><br />Assistant Zonal Manager, Radiant Pharmaceuticals Ltd.<br />subhoraj.hossain@radiantpharma.com | +880 1811-448478</li>
