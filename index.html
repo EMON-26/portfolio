@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Md Sakib Hasan Emon - CSE Undergraduate" />
+    <meta name="description" content="Md Sakib Hasan Emon Portfolio" />
     <title>Md Sakib Hasan Emon | Portfolio</title>
     <style>
         :root {
-            --bg: #ffffff;
-            --bg-soft: #f5f5f5;
-            --text: #111111;
-            --muted: #555555;
-            --line: #d9d9d9;
-            --card: #ffffff;
-            --accent: #1f1f1f;
+            --bg: #0b0b0b;
+            --bg-soft: #141414;
+            --bg-card: #1a1a1a;
+            --line: #2b2b2b;
+            --text: #f3f3f3;
+            --muted: #b6b6b6;
+            --white: #ffffff;
         }
 
         * {
@@ -27,128 +27,187 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
         }
 
-        .container {
-            width: min(1100px, 92%);
-            margin: 0 auto;
+        a {
+            color: var(--white);
+            text-decoration: none;
         }
 
-        .site-header {
-            position: sticky;
+        .layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
             top: 0;
-            z-index: 100;
-            background: var(--bg);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .nav {
+            width: 300px;
+            height: 100vh;
+            background: #050505;
+            border-right: 1px solid var(--line);
+            padding: 2.4rem 1.8rem;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
-            padding: 0.9rem 0;
-            gap: 1rem;
         }
 
         .brand {
-            font-size: 1.05rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.9rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.95rem;
-            padding: 0.25rem 0.45rem;
-            border-radius: 4px;
-        }
-
-        .nav-links a:hover,
-        .nav-links a:focus {
-            background: var(--bg-soft);
-            outline: none;
-        }
-
-        section {
-            padding: 3.5rem 0;
-            border-bottom: 1px solid var(--line);
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: var(--accent);
-            line-height: 1.25;
-        }
-
-        h1 {
-            font-size: clamp(1.8rem, 4vw, 2.7rem);
-            margin-bottom: 0.8rem;
-        }
-
-        h2 {
-            font-size: clamp(1.35rem, 2.8vw, 1.9rem);
-            margin-bottom: 1rem;
-        }
-
-        p,
-        li {
+        .tagline {
+            margin-top: 0.6rem;
             color: var(--muted);
-            font-size: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .menu {
+            list-style: none;
+            margin-top: 2rem;
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        .menu a {
+            display: block;
+            border: 1px solid transparent;
+            padding: 0.6rem 0.7rem;
+            color: #d9d9d9;
+            font-size: 0.93rem;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            transition: 0.2s ease;
+        }
+
+        .menu a:hover {
+            border-color: var(--line);
+            background: var(--bg-soft);
+            color: var(--white);
+        }
+
+        .sidebar-footer {
+            color: #9f9f9f;
+            font-size: 0.82rem;
+            border-top: 1px solid var(--line);
+            padding-top: 1rem;
+        }
+
+        .main {
+            margin-left: 300px;
         }
 
         .hero {
-            padding-top: 4.2rem;
+            min-height: 100vh;
+            display: grid;
+            align-items: center;
+            background: linear-gradient(rgba(8, 8, 8, 0.84), rgba(8, 8, 8, 0.84)), url("full photo.jpg") center/cover no-repeat;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hero-inner {
+            width: min(980px, 90%);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            color: #c4c4c4;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-size: 0.8rem;
+            margin-bottom: 1.1rem;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5.7vw, 4.5rem);
+            line-height: 1.1;
+            max-width: 900px;
         }
 
         .hero p {
-            max-width: 750px;
+            color: #c2c2c2;
+            margin-top: 1.25rem;
+            max-width: 760px;
+            font-size: 1.04rem;
         }
 
         .hero-actions {
+            margin-top: 2rem;
             display: flex;
-            gap: 0.8rem;
-            margin-top: 1.2rem;
+            gap: 0.85rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            text-decoration: none;
-            border: 1px solid #202020;
-            background: #111111;
-            color: #ffffff;
-            padding: 0.55rem 1rem;
-            font-size: 0.95rem;
+            padding: 0.65rem 1rem;
+            border: 1px solid #f3f3f3;
+            background: #f3f3f3;
+            color: #070707;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
 
-        .btn.secondary {
-            background: #ffffff;
-            color: #111111;
+        .btn.alt {
+            background: transparent;
+            color: #f3f3f3;
+        }
+
+        section {
+            padding: 4.2rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .container {
+            width: min(980px, 90%);
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .section-head span {
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .card {
             border: 1px solid var(--line);
-            background: var(--card);
+            background: var(--bg-card);
             padding: 1rem;
+        }
+
+        .card p,
+        .card li {
+            color: #c7c7c7;
         }
 
         .list {
@@ -158,293 +217,410 @@
         }
 
         .list li {
-            border-bottom: 1px solid var(--line);
-            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #2f2f2f;
+            padding-bottom: 0.55rem;
         }
 
         .list li:last-child {
-            border-bottom: none;
+            border-bottom: 0;
             padding-bottom: 0;
         }
 
-        .project-title {
-            color: var(--text);
-            font-weight: 700;
-            margin-bottom: 0.2rem;
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .project {
+            border: 1px solid var(--line);
+            background: linear-gradient(150deg, #1a1a1a, #101010);
+            padding: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-3px);
+            border-color: #5a5a5a;
+        }
+
+        .project h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .project p {
+            color: #b8b8b8;
+            font-size: 0.95rem;
+        }
+
+        .meta {
+            margin-top: 0.8rem;
+            color: #8f8f8f;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            display: none;
+            z-index: 999;
+            padding: 2rem 1rem;
+            overflow-y: auto;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        .overlay-card {
+            width: min(900px, 95%);
+            margin: 3rem auto;
+            border: 1px solid #444;
+            background: #111;
+            padding: 1.35rem;
+        }
+
+        .overlay-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .overlay h3 {
+            font-size: 1.35rem;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: 1px solid #666;
+            color: #f2f2f2;
+            padding: 0.35rem 0.6rem;
+            cursor: pointer;
+        }
+
+        .overlay p {
+            color: #cdcdcd;
+            margin-bottom: 0.8rem;
         }
 
         .footer {
-            padding: 2rem 0 2.5rem;
+            padding: 2rem 0;
             text-align: center;
-            color: var(--muted);
-            font-size: 0.94rem;
+            color: #9f9f9f;
+            font-size: 0.88rem;
         }
 
-        a {
-            color: #1f1f1f;
-        }
-
-        @media (max-width: 840px) {
-            .grid-2 {
+        @media (max-width: 980px) {
+            .layout {
                 grid-template-columns: 1fr;
             }
 
-            .nav {
-                flex-direction: column;
-                align-items: flex-start;
+            .sidebar {
+                position: sticky;
+                width: 100%;
+                height: auto;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+                padding: 1rem;
+            }
+
+            .menu {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .main {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .grid-2,
+            .portfolio-grid,
+            .menu {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="container nav">
-            <div class="brand">Md Sakib Hasan Emon</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#testing">Testing</a></li>
-                <li><a href="#references">References</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h1>CSE Undergraduate | Machine Learning, Data Mining, Deep Learning & NLP</h1>
-                <p>
-                    Computer Science and Engineering undergraduate with a strong academic focus on Machine Learning, Data Mining,
-                    Deep Learning, and NLP. Experienced in data collection, preprocessing, feature engineering, model training,
-                    and evaluation using Python-based ML frameworks.
-                </p>
-                <div class="hero-actions">
-                    <a class="btn" href="#projects">View Projects</a>
-                    <a class="btn secondary" href="#contact">Contact Me</a>
-                </div>
+    <div class="layout">
+        <aside class="sidebar">
+            <div>
+                <div class="brand">Md Sakib Hasan Emon</div>
+                <p class="tagline">Machine Learning | Data Mining | Deep Learning | NLP</p>
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-        </section>
+            <div class="sidebar-footer">
+                Dhaka, Bangladesh<br />
+                +880 1614-633411<br />
+                mdsakibhasanemon@gmail.com
+            </div>
+        </aside>
 
-        <section id="about">
-            <div class="container">
-                <h2>About</h2>
-                <div class="grid-2">
+        <main class="main">
+            <section class="hero" id="home">
+                <div class="hero-inner">
+                    <p class="eyebrow">Portfolio 2026</p>
+                    <h1>Building Practical ML and NLP Solutions With Clear Engineering Workflows</h1>
+                    <p>
+                        Computer Science and Engineering undergraduate with strong academic focus on Machine Learning,
+                        Data Mining, Deep Learning, and NLP. Experienced in data collection, preprocessing, feature engineering,
+                        model training, and evaluation using Python-based ML frameworks.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn">Explore Work</a>
+                        <a href="#contact" class="btn alt">Contact</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about">
+                <div class="container">
+                    <div class="section-head">
+                        <h2>About</h2>
+                        <span>Profile</span>
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <p>
+                                Actively involved in research on mental health prediction from social media data and seeking
+                                ML-focused internship or research assistant opportunities. Strong interest in translating theory
+                                into useful, testable, and dependable systems.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <ul class="list">
+                                <li><strong>Name:</strong> Md Sakib Hasan Emon</li>
+                                <li><strong>Location:</strong> Dhaka, Bangladesh</li>
+                                <li><strong>LinkedIn:</strong> linkedin.com/in/mdsakibhasan26</li>
+                                <li><strong>GitHub:</strong> github.com/EMON-26</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Skills</h2>
+                        <span>Capabilities</span>
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <ul class="list">
+                                <li><strong>Programming:</strong> Python, C, Java</li>
+                                <li><strong>Machine Learning:</strong> Supervised Learning, Classification, Regression, Clustering</li>
+                                <li><strong>Data Mining:</strong> Data Cleaning, Preprocessing, Pattern Discovery, EDA</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <ul class="list">
+                                <li><strong>Deep Learning & NLP:</strong> Neural Networks, Transformer Models, Tokenization, Embeddings</li>
+                                <li><strong>Software QA:</strong> Manual Testing, Functional Testing, Test Case Design, Bug Reporting</li>
+                                <li><strong>Tools:</strong> NumPy, Pandas, Scikit-learn, TensorFlow (basic), PyTorch (basic), Git, Bash, LaTeX, Streamlit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Projects</h2>
+                        <span>Selected Work</span>
+                    </div>
+                    <div class="portfolio-grid">
+                        <article class="project" data-title="UNITY AID - Community Driven Emergency Helping Platform (IDP)" data-body="Designed and developed a web-based emergency response platform connecting people in need with volunteers and organizations. Implemented role-based access control, verified case management, real-time request tracking, and location-based coordination. QA contribution included manual test case execution, form validation checks, and structured bug reporting.">
+                            <h3>UNITY AID (IDP)</h3>
+                            <p>Emergency response platform with role-based workflow and QA validation.</p>
+                            <div class="meta">Web Platform / QA / IDP</div>
+                        </article>
+
+                        <article class="project" data-title="Banglish Mental Health Classification (ML & Deep Learning)" data-body="Developed an NLP-based machine learning system for emotion and mental health severity classification from Bangla-English code-mixed social media data, including preprocessing and model evaluation stages.">
+                            <h3>Banglish Mental Health Classification</h3>
+                            <p>NLP pipeline for code-mixed emotion and severity classification.</p>
+                            <div class="meta">ML / NLP / Research</div>
+                        </article>
+
+                        <article class="project" data-title="ARFF Dataset Analysis & Decision Tree Exploration" data-body="Implemented data preprocessing, feature analysis, and decision tree modeling on ARFF datasets for data mining experimentation and structured learning analysis.">
+                            <h3>ARFF Dataset Analysis</h3>
+                            <p>Data mining workflow with feature analysis and decision tree modeling.</p>
+                            <div class="meta">Data Mining</div>
+                        </article>
+
+                        <article class="project" data-title="Employee Management System (Java)" data-body="Built a structured CRUD-based desktop application using Java Swing for handling employee records with a clean workflow.">
+                            <h3>Employee Management System</h3>
+                            <p>Java Swing desktop CRUD application for employee record operations.</p>
+                            <div class="meta">Java / Desktop</div>
+                        </article>
+
+                        <article class="project" data-title="Inventory Management System (Shell Script)" data-body="Developed a menu-driven shell script system supporting structured record handling, updates, and reporting features.">
+                            <h3>Inventory Management System</h3>
+                            <p>Menu-driven shell-based inventory records and reporting utility.</p>
+                            <div class="meta">Shell Script</div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education">
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Education</h2>
+                        <span>Academic</span>
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <ul class="list">
+                                <li><strong>Green University of Bangladesh</strong><br />B.Sc. in Computer Science & Engineering<br />CGPA: 3.43 / 4.00<br />2022 - Present</li>
+                                <li><strong>Mymensingh Govt. College</strong><br />Higher Secondary Certificate (Science)<br />GPA: 5.00 / 5.00<br />2018 - 2020</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <ul class="list">
+                                <li><strong>Testing Portfolio:</strong> github.com/EMON-26/unity-aid-testing</li>
+                                <li><strong>Award:</strong> IDP Recognition - UNITY AID, Department of CSE, Green University of Bangladesh</li>
+                                <li><strong>Languages:</strong> Bangla (Native), English (Professional)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Experience</h2>
+                        <span>Practical Work</span>
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <ul class="list">
+                                <li><strong>Academic & Technical Support (Informal)</strong><br />2021 - 2022</li>
+                                <li><strong>Peer ML & Data Analysis Assistance (Informal)</strong><br />2023 - 2024</li>
+                                <li><strong>Software Testing & QA Contributor - UNITY AID (IDP)</strong><br />2025</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <p>
+                                Responsibilities included supporting learners in programming and data tasks,
+                                assisting ML preprocessing and model evaluation workflows, and executing manual
+                                test cases with defect reporting for better product reliability.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="research">
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Research</h2>
+                        <span>Ongoing</span>
+                    </div>
                     <div class="card">
                         <p>
-                            Actively involved in research on mental health prediction from social media data and currently
-                            seeking ML-focused internship or research assistant opportunities. I am also involved in software
-                            testing and QA activities for practical project reliability.
+                            Mental Health Classification from Social Media Data using Machine Learning and Deep Learning.
+                            Research focuses on Bangla-English code-mixed social media text with emphasis on preprocessing,
+                            feature engineering, supervised learning, and transformer-based architectures.
                         </p>
                     </div>
-                    <div class="card">
-                        <ul class="list">
-                            <li><strong>Location:</strong> Dhaka, Bangladesh</li>
-                            <li><strong>Phone:</strong> +880 1614-633411</li>
-                            <li><strong>Email:</strong> mdsakibhasanemon@gmail.com</li>
-                            <li><strong>Languages:</strong> Bangla (Native), English (Fluent)</li>
-                        </ul>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Contact</h2>
+                        <span>Get in touch</span>
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <ul class="list">
+                                <li><strong>Email:</strong> <a href="mailto:mdsakibhasanemon@gmail.com">mdsakibhasanemon@gmail.com</a></li>
+                                <li><strong>Phone:</strong> <a href="tel:+8801614633411">+880 1614-633411</a></li>
+                                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mdsakibhasan26" target="_blank" rel="noopener">linkedin.com/in/mdsakibhasan26</a></li>
+                                <li><strong>GitHub:</strong> <a href="https://github.com/EMON-26" target="_blank" rel="noopener">github.com/EMON-26</a></li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>References</h3>
+                            <ul class="list">
+                                <li><strong>Dr. Md. Solaiman Mia</strong><br />Assistant Professor, CSE, Green University of Bangladesh<br />solaiman.mia@green.edu.bd | +880 1976-524626</li>
+                                <li><strong>Subhoraj Hossain</strong><br />Assistant Zonal Manager, Radiant Pharmaceuticals Ltd.<br />subhoraj.hossain@radiantpharma.com | +880 1811-448478</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="grid-2">
-                    <div class="card">
-                        <h3>Programming</h3>
-                        <ul class="list">
-                            <li>Python, C, Java</li>
-                            <li>Data structures and OOP fundamentals</li>
-                            <li>Problem solving and algorithmic thinking</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Machine Learning</h3>
-                        <ul class="list">
-                            <li>Supervised Learning, Classification, Regression</li>
-                            <li>Clustering, Feature Engineering, Model Evaluation</li>
-                            <li>Data preprocessing and workflow debugging</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Data Mining, Deep Learning & NLP</h3>
-                        <ul class="list">
-                            <li>Data Cleaning, EDA, Pattern Discovery, Text Mining</li>
-                            <li>Neural Networks, Transformer Models (Introductory)</li>
-                            <li>Tokenization, Embeddings, Code-Mixed Text Processing</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Software Testing & QA</h3>
-                        <ul class="list">
-                            <li>Manual and Functional Testing</li>
-                            <li>Test Case Design, Bug Reporting, Requirement Validation</li>
-                            <li>System Testing, Test Scenario Writing, Git Issue Tracking</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Libraries & Tools</h3>
-                        <ul class="list">
-                            <li>NumPy, Pandas, Scikit-learn</li>
-                            <li>TensorFlow (basic), PyTorch (basic)</li>
-                            <li>Git</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Utilities</h3>
-                        <ul class="list">
-                            <li>Bash</li>
-                            <li>LaTeX</li>
-                            <li>Streamlit</li>
-                            <li>MS Office</li>
-                        </ul>
-                    </div>
+            <footer class="footer">
+                <div class="container">
+                    Declaration: The information provided is accurate and authentic to the best of my knowledge.<br />
+                    Md Sakib Hasan Emon | Date: February 17, 2026
                 </div>
-            </div>
-        </section>
+            </footer>
+        </main>
+    </div>
 
-        <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="card">
-                    <ul class="list">
-                        <li>
-                            <div class="project-title">UNITY AID - Community Driven Emergency Helping Platform (IDP)</div>
-                            Designed and developed a web-based emergency response platform connecting people in need with
-                            volunteers and organizations. Implemented role-based access control, verified case management,
-                            real-time request tracking, and location-based coordination.
-                            <br />QA Contribution: Conducted manual testing with designed test cases, verified user flows and
-                            form validation, and improved reliability through systematic bug reporting.
-                        </li>
-                        <li>
-                            <div class="project-title">Banglish Mental Health Classification (ML & Deep Learning)</div>
-                            Developed an NLP-based ML system for emotion and mental health severity classification from
-                            Bangla-English code-mixed social media data.
-                        </li>
-                        <li>
-                            <div class="project-title">ARFF Dataset Analysis & Decision Tree Exploration (Data Mining)</div>
-                            Implemented data preprocessing, feature analysis, and decision tree modeling on ARFF datasets.
-                        </li>
-                        <li>
-                            <div class="project-title">Employee Management System (Java)</div>
-                            Built a structured CRUD-based desktop application using Java Swing.
-                        </li>
-                        <li>
-                            <div class="project-title">Inventory Management System (Shell Script)</div>
-                            Developed a menu-driven system supporting structured data storage and reporting.
-                        </li>
-                    </ul>
-                </div>
+    <div class="overlay" id="projectOverlay" aria-hidden="true">
+        <div class="overlay-card">
+            <div class="overlay-top">
+                <h3 id="overlayTitle">Project Title</h3>
+                <button class="close-btn" id="closeOverlay" type="button">Close</button>
             </div>
-        </section>
-
-        <section id="education">
-            <div class="container">
-                <h2>Education & Experience</h2>
-                <div class="grid-2">
-                    <div class="card">
-                        <h3>Education</h3>
-                        <ul class="list">
-                            <li>
-                                <strong>Green University of Bangladesh</strong><br />
-                                B.Sc. in Computer Science & Engineering, CGPA 3.43/4.00 (2022 - Present)
-                            </li>
-                            <li>
-                                <strong>Mymensingh Govt. College</strong><br />
-                                Higher Secondary Certificate (Science), GPA 5.00/5.00 (2018 - 2020)
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Experience & Research</h3>
-                        <ul class="list">
-                            <li>Academic & Technical Support (Informal) (2021 - 2022)</li>
-                            <li>Software Testing & QA Contributor - UNITY AID (IDP) (2025)</li>
-                            <li>Peer ML & Data Analysis Assistance (Informal) (2023 - 2024)</li>
-                            <li>
-                                Ongoing research on mental health classification from social media text
-                                using supervised ML models and transformer-based architectures.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testing">
-            <div class="container">
-                <h2>Testing Portfolio & Awards</h2>
-                <div class="grid-2">
-                    <div class="card">
-                        <h3>Testing Portfolio</h3>
-                        <ul class="list">
-                            <li>
-                                UNITY AID Test Case Documentation and QA Reports:<br />
-                                <a href="https://github.com/EMON-26/unity-aid-testing" target="_blank" rel="noopener">github.com/EMON-26/unity-aid-testing</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Award</h3>
-                        <ul class="list">
-                            <li>Integrated Design Project (IDP) Recognition - UNITY AID, Department of CSE, Green University of Bangladesh</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="references">
-            <div class="container">
-                <h2>References</h2>
-                <div class="grid-2">
-                    <div class="card">
-                        <h3>Dr. Md. Solaiman Mia</h3>
-                        <ul class="list">
-                            <li>Assistant Professor, Department of Computer Science & Engineering</li>
-                            <li>Green University of Bangladesh</li>
-                            <li>Email: <a href="mailto:solaiman.mia@green.edu.bd">solaiman.mia@green.edu.bd</a></li>
-                            <li>Phone: <a href="tel:+8801976524626">+880 1976-524626</a></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Subhoraj Hossain</h3>
-                        <ul class="list">
-                            <li>Assistant Zonal Manager, Radiant Pharmaceuticals Ltd.</li>
-                            <li>Email: <a href="mailto:subhoraj.hossain@radiantpharma.com">subhoraj.hossain@radiantpharma.com</a></li>
-                            <li>Phone: <a href="tel:+8801811448478">+880 1811-448478</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <h2>Contact</h2>
-                <div class="card">
-                    <ul class="list">
-                        <li>Email: <a href="mailto:mdsakibhasanemon@gmail.com">mdsakibhasanemon@gmail.com</a></li>
-                        <li>Phone: <a href="tel:+8801614633411">+880 1614-633411</a></li>
-                        <li>LinkedIn: <a href="https://www.linkedin.com/in/mdsakibhasan26" target="_blank" rel="noopener">www.linkedin.com/in/mdsakibhasan26</a></li>
-                        <li>GitHub: <a href="https://github.com/EMON-26" target="_blank" rel="noopener">github.com/EMON-26</a></li>
-                        <li>Declaration: Information provided is accurate and authentic to the best of my knowledge (Date: February 17, 2026).</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Md Sakib Hasan Emon. All rights reserved.</p>
+            <p id="overlayBody">Project details</p>
         </div>
-    </footer>
+    </div>
+
+    <script>
+        const projects = document.querySelectorAll('.project');
+        const overlay = document.getElementById('projectOverlay');
+        const overlayTitle = document.getElementById('overlayTitle');
+        const overlayBody = document.getElementById('overlayBody');
+        const closeOverlay = document.getElementById('closeOverlay');
+
+        projects.forEach((project) => {
+            project.addEventListener('click', () => {
+                overlayTitle.textContent = project.dataset.title;
+                overlayBody.textContent = project.dataset.body;
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeOverlay.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        });
+
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) {
+                overlay.classList.remove('active');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
 </body>
 </html>
