@@ -166,7 +166,28 @@
         }
 
         .hero {
+            position: relative;
+            overflow: hidden;
             padding: 112px 0 56px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("full photo.jpg") center top / cover no-repeat;
+            filter: blur(9px) saturate(0.85);
+            transform: scale(1.08);
+            opacity: 0.25;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(8, 17, 31, 0.74) 0%, rgba(8, 17, 31, 0.82) 100%);
+            z-index: 0;
         }
 
         .hero-grid,
@@ -179,6 +200,8 @@
         .hero-grid {
             grid-template-columns: 1.25fr 0.85fr;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .grid-2 {
