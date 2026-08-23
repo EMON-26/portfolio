@@ -4,7 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Academic portfolio of Md Sakib Hasan Emon for Master's scholarship applications in Artificial Intelligence, Machine Learning, NLP, and Data Science." />
+    <meta name="author" content="Md Sakib Hasan Emon" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mdsakibhasanemon.netlify.app/" />
     <title>Md Sakib Hasan Emon | Academic Portfolio</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#08111f" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://mdsakibhasanemon.netlify.app/" />
+    <meta property="og:title" content="Md Sakib Hasan Emon | Academic Portfolio" />
+    <meta property="og:description" content="Academic portfolio for Master's scholarship applications in Artificial Intelligence, Machine Learning, NLP, and Data Science." />
+    <meta property="og:image" content="https://mdsakibhasanemon.netlify.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Sakib Hasan" />
+    <meta property="profile:last_name" content="Emon" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Md Sakib Hasan Emon | Academic Portfolio" />
+    <meta name="twitter:description" content="Academic portfolio for Master's scholarship applications in Artificial Intelligence, Machine Learning, NLP, and Data Science." />
+    <meta name="twitter:image" content="https://mdsakibhasanemon.netlify.app/og-image.jpg" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Md Sakib Hasan Emon",
+      "url": "https://mdsakibhasanemon.netlify.app/",
+      "image": "https://mdsakibhasanemon.netlify.app/profile.jpg",
+      "jobTitle": "Computer Science and Engineering Graduate",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Green University of Bangladesh"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dhaka",
+        "addressCountry": "BD"
+      },
+      "email": "mailto:mdsakibhasanemon@gmail.com",
+      "sameAs": [
+        "https://github.com/EMON-26",
+        "https://linkedin.com/in/mdsakibhasan26"
+      ],
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Natural Language Processing", "Data Science", "Explainable AI"]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -175,7 +230,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: url("full photo.jpg") center top / cover no-repeat;
+            background: url("profile.jpg") center top / cover no-repeat;
             filter: blur(9px) saturate(0.85);
             transform: scale(1.08);
             opacity: 0.25;
@@ -356,8 +411,14 @@
             border-bottom: 1px solid var(--line);
         }
 
+        .portrait-wrap picture {
+            display: block;
+            width: 100%;
+        }
+
         .portrait {
             width: 100%;
+            height: auto;
             aspect-ratio: 0.92 / 1;
             object-fit: cover;
             object-position: center top;
@@ -721,7 +782,7 @@
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="#research"><i class="fa-solid fa-arrow-down"></i> View Research</a>
                         <a class="btn btn-secondary" href="mailto:mdsakibhasanemon@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-                        <a class="btn btn-secondary" href="resume.txt" download><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+                        <a class="btn btn-secondary" href="resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
                         <a class="btn btn-secondary" href="scholarship.html"><i class="fa-solid fa-user-graduate"></i> Scholarship Landing Page</a>
                     </div>
 
@@ -743,7 +804,10 @@
 
                 <aside class="panel hero-aside reveal delay-1">
                     <div class="portrait-wrap">
-                        <img class="portrait" src="full photo.jpg" alt="Md Sakib Hasan Emon portrait" />
+                        <picture>
+                            <source srcset="profile.webp" type="image/webp" />
+                            <img class="portrait" src="profile.jpg" alt="Md Sakib Hasan Emon portrait" width="1000" height="1777" loading="eager" fetchpriority="high" decoding="async" />
+                        </picture>
                     </div>
                     <div class="profile-body">
                         <h2>Academic profile</h2>
@@ -949,6 +1013,18 @@
                     </article>
 
                     <article class="card reveal delay-1">
+                        <h3>Banglish Mental Health Text Classifier <span class="pill" style="margin-left: 0.4rem; vertical-align: middle;">Web App</span></h3>
+                        <p class="meta">Python | FastAPI | Explainable NLP | Bangla-English Code-Mixed Text</p>
+                        <p><a href="https://github.com/EMON-26/banglish-mental-health-classifier" target="_blank" rel="noreferrer">github.com/EMON-26/banglish-mental-health-classifier</a></p>
+                        <ul style="margin-top: 0.75rem;">
+                            <li>Companion tool to the thesis above — a transparent, lexicon-based engine (not a neural network) that weak-labeled the 56,500-sample training dataset before BanglaBERT-MTL-AP was trained on it.</li>
+                            <li>Built a FastAPI backend with live single-text and batch-CSV classification endpoints.</li>
+                            <li>Designed a phrase-level explainability layer that highlights exactly which matched words drove each prediction.</li>
+                            <li>Fixed a critical safety bug during testing where zero-signal text defaulted to a false "suicidal" flag, replacing it with a safe "normal" default and an explicit review flag.</li>
+                        </ul>
+                    </article>
+
+                    <article class="card reveal delay-2">
                         <h3>UNITY AID - Community Emergency Response Platform</h3>
                         <p class="meta">Software Engineering | Web Platform | QA</p>
                         <p><a href="https://github.com/EMON-26/unity-aid-testing" target="_blank" rel="noreferrer">github.com/EMON-26/unity-aid-testing</a></p>
@@ -960,7 +1036,7 @@
                         </ul>
                     </article>
 
-                    <article class="card reveal delay-2">
+                    <article class="card reveal delay-3">
                         <h3>Employee Management System</h3>
                         <p class="meta">Java | Desktop Application</p>
                         <p><a href="https://github.com/EMON-26" target="_blank" rel="noreferrer">github.com/EMON-26</a></p>
@@ -971,7 +1047,7 @@
                         </ul>
                     </article>
 
-                    <article class="card reveal delay-3">
+                    <article class="card reveal">
                         <h3>Inventory Management System</h3>
                         <p class="meta">Bash | Linux</p>
                         <p><a href="https://github.com/EMON-26" target="_blank" rel="noreferrer">github.com/EMON-26</a></p>

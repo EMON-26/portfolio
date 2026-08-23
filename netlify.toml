@@ -4,12 +4,49 @@
 [build.environment]
   NODE_VERSION = "20"
 
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
+# No catch-all SPA redirect here on purpose — this is a static multi-page
+# site (index.html, scholarship.html, robots.txt, sitemap.xml, resume.pdf
+# all exist as real files), so a "/* -> /index.html" rule would mask real
+# 404s behind a 200 status, which hurts SEO and hides broken links.
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# Long-cache immutable static assets (images, fonts, icons) — filenames
+# don't change unless the file content changes, so it's safe to cache hard.
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML should always be revalidated so content updates show up immediately
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/resume.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
