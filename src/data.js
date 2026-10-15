@@ -7,6 +7,7 @@ export const profile = {
   email: 'mdsakibhasanemon@gmail.com',
   github: 'https://github.com/EMON-26',
   linkedin: 'https://linkedin.com/in/mdsakibhasan26',
+  facebook: 'https://www.facebook.com/share/1C1zhxFxvF/',
   cv: '/resume.pdf',
   bio: 'Computer Science and Engineering graduate with a strong academic focus on Machine Learning, Data Mining, Deep Learning, and Natural Language Processing. Experienced in data collection, preprocessing, feature engineering, model training, and evaluation using Python-based ML frameworks. Actively engaged in research on mental health prediction from Bangla-English code-mixed social media data.',
   statement: "Seeking a fully funded Master's programme in Artificial Intelligence, Machine Learning, or Data Science to advance research in Natural Language Processing and Explainable AI.",
