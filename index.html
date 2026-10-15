@@ -12,7 +12,8 @@
     <title>EMON | AI/ML Portfolio</title>
   </head>
   <body>
-    <form name="portfolio-contact" netlify hidden>
+    <form name="portfolio-contact" method="POST" action="/success.html" data-netlify="true" netlify hidden>
+      <input type="hidden" name="form-name" value="portfolio-contact" />
       <input name="name" />
       <input name="email" />
       <textarea name="message"></textarea>
